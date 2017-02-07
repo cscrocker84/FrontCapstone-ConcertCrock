@@ -1,0 +1,25 @@
+{
+  "name": "FrontCapstone-ConcertCrock",
+  "homepage": "https://github.com/cscrocker84/FrontCapstone-ConcertCrock",
+  "authors": [
+    "Charlie Crocker <cscrocker84@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "materialize": "^0.98.0",
+    "firebase": "^3.6.8",
+    "lodash": "^4.17.4"
+  }
+}
