@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Charlie's Concert Crock</title>
+	<link rel="stylesheet" type="text/css" href="/lib/materialize/dist/css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-app="readApp">
+
+	<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Artist</a></li>
+  <li><a href="#!">City</a></li>
+  <li><a href="#!">Venue</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">CCC</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="">Personal Page</a></li>
+      <li><a href="">Forum</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Search By<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+	<div ng-view></div>
+	<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+	<script src="/lib/jquery/dist/jquery.min.js"></script>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/angular-route/angular-route.min.js"></script>
+	<script src="/lib/firebase/firebase.js"></script>
+	<script src="/lib/materialize/dist/js/materialize.js"></script>
+	<script src="/lib/lodash/lodash.js"></script>
+	<script src="/app/app.js"></script>
+	<script src="/app/config/config.js"></script>
+	<script src="/app/controllers/homeCtrl.js"></script>
+	<script src="/app/controllers/loginCtrl.js"></script>
+	<script src="/app/controllers/postCtrl.js"></script>
+	<script src="/app/controllers/registerCtrl.js"></script>
+	<script src="/app/factories/authFactory.js"></script>
+	<!-- <script src="/app/factories/postFactory.js"></script> -->
+
+
+</body>
+</html>
