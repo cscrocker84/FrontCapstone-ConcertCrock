@@ -8,4 +8,15 @@ app.config(($routeProvider, $locationProvider) => {
     databaseURL: "https://capstonecharliesconcertcrock.firebaseio.com",
     storageBucket: "capstonecharliesconcertcrock.appspot.com",
     messagingSenderId: "325860455476"
-});
+})
+
+  $locationProvider.hashPrefix("")
+  $routeProvider
+  .when('/main', {
+    controller: 'homeCtrl',
+    templateUrl: '/app/controllers/homeView.html',
+    resolve: {
+      // authentication resolves from factories
+    }
+  })
+})
