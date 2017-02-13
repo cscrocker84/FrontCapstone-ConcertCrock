@@ -8,15 +8,42 @@ app.config(($routeProvider, $locationProvider) => {
     databaseURL: "https://capstonecharliesconcertcrock.firebaseio.com",
     storageBucket: "capstonecharliesconcertcrock.appspot.com",
     messagingSenderId: "325860455476"
-})
+});
 
-  $locationProvider.hashPrefix("")
+$locationProvider.hashPrefix("")
   $routeProvider
-  .when('/main', {
-    controller: 'homeCtrl',
-    templateUrl: '/app/controllers/homeView.html',
-    resolve: {
-      // authentication resolves from factories
-    }
-  })
-})
+    .when('/main', {
+      controller: 'homeCtrl',
+      templateUrl: '/app/partials/homePage.html',
+      resolve: {
+          posts (concertFactory) {
+            return concertFactory.getPosts()
+          },
+          user (authFactory, $location) {
+            return authFactory.getUser().catch(() => {
+                var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
+                // Materialize.toast($toastContent, 500);
+                // $('#loginModal').modal('open');
+              $location.url('/login')})
+          },
+      }
+    })
+    .when('/login', {
+      controller: 'loginCtrl',
+      templateUrl: '/app/partials/homePage.html',
+    })
+    .when('/register', {
+      controller: 'registerCtrl',
+      templateUrl: '/app/partials/homePage.html',
+    })
+    .when('/post', {
+      controller: 'postCtrl',
+      templateUrl: '/app/partials/homePage.html',
+    }).when('/logout', {
+      controller: 'logoutCtrl',
+      templateUrl: '/app/partials/homePage.html',
+    })
+    .otherwise({
+      redirectTo: '/main'
+    });
+});
