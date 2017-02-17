@@ -1,0 +1,19 @@
+<h1>Search for Upcoming Concerts by Zip Code</h1>
+
+
+<form ng-submit="getShows()">
+  <input ng-model="zipCode" type="text" placeholder="Zip Code">
+  <input class="btn btn-primary" type="submit" value="Get Shows">
+</form>
+<div id="results" class="resultContainer all">
+    <div class="row">
+            <ul ng-repeat="each in eventsArray">
+            	<li>Artist: {{each.Artists[0].Name}}</li>
+                <li>Date: {{each.Date}}</li>
+                <li>Venue: {{each.Venue.Name}}</li>
+                <li>Venue: {{each.Venue.City}}</li>
+
+                </ul>
+        </div>
+    </div>
+</div>
