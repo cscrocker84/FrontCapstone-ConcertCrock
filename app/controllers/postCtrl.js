@@ -3,7 +3,7 @@ app.controller('postCtrl', function($scope, $location, authFactory, concertFacto
   $scope.newPost = () => {
     // get user
     // new post
-    concertFactory.newPost($scope.Link, $scope.Title, $scope.Date)
+    concertFactory.newPost($scope.Link, $scope.Title, $scope.Date, $scope.Venue)
       .then((user) => {
         let userId = user.data.name
         let toPost = {"uid": userId, "first": $scope.firstName, "last": $scope.lastName}

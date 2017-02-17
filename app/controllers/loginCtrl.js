@@ -3,6 +3,7 @@ app.controller('loginCtrl', function($scope, $location, authFactory) {
   $scope.userLogin = () => {
     authFactory.login($scope.user_email, $scope.user_password)
       .then(() => {
+        Materialize.toast("logged in", 1000)
         console.log("woohoo")
         $location.url('/main')
       });
