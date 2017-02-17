@@ -11,10 +11,6 @@ app.factory('concertFactory', ($q, authFactory, $http) => {
             url: link,
           })
         })
-        // .then((response) => {
-        //   let x = response.data.name;
-        //   copyKey(x, x)
-        // })
     },
     handleFiles(userId) {
       let storageRef = firebase.storage().ref();
