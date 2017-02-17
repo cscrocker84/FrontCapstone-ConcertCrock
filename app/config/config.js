@@ -10,7 +10,7 @@ app.config(($routeProvider, $locationProvider) => {
     messagingSenderId: "325860455476"
 });
 
-$locationProvider.hashPrefix("")
+// $locationProvider.hashPrefix("")
   $routeProvider
     .when('/main', {
       controller: 'homeCtrl',
@@ -39,7 +39,24 @@ $locationProvider.hashPrefix("")
     .when('/post', {
       controller: 'postCtrl',
       templateUrl: '/app/partials/homePage.html',
-    }).when('/logout', {
+    })
+      .when('/search', {
+      controller: 'searchCtrl',
+      templateUrl: '/app/partials/searchPage.html',
+    })
+      .when('/results', {
+      controller: 'searchCtrl',
+      templateUrl: '/app/partials/results.html',
+    //   // resolve: {
+    //   //     results (searchFactory, $route) {
+    //   //       return weatherFactory.getWeather($route.current.params.zipcode)
+      //     },
+    })
+      .when('/profile', {
+      controller: 'profileCtrl',
+      templateUrl: '/app/partials/profile.html',
+    })
+      .when('/logout', {
       controller: 'logoutCtrl',
       templateUrl: '/app/partials/homePage.html',
     })
