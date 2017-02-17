@@ -14,18 +14,16 @@
   <li><a href="#!">City</a></li>
   <li><a href="#!">Venue</a></li>
 </ul> -->
-<!-- <nav>
+<nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">CCC</a>
+    <a href="#!" class="brand-logo">Charlie's Concert Crock</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="">Personal Page</a></li>
-      <li><a href="">Search Page</a></li>
-      <li><a href="">Forum</a></li>
-      <! Dropdown Trigger -->
-      <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Search Page<i <! class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
+      <li><a href="/#/main">Favorite Concert Board</a></li>
+      <li><a href="/#/search">Search Page</a></li>
+      <li><a href="/#/profile">Personal Profile</a></li>
+
   </div>
-</nav>  -->
+</nav>
 
 	<div ng-view></div>
 	<script src="/lib/jquery/dist/jquery.min.js"></script>
@@ -42,8 +40,12 @@
 	<script src="/app/controllers/logoutCtrl.js"></script>
 	<script src="/app/controllers/postCtrl.js"></script>
 	<script src="/app/controllers/registerCtrl.js"></script>
+	<script src="/app/controllers/searchCtrl.js"></script>
+	<script src="/app/controllers/profileCtrl.js"></script>
 	<script src="/app/factories/authFactory.js"></script>
 	<script src="/app/factories/concertFactory.js"></script>
+	<script src="/app/factories/searchFactory.js"></script>
+	<script src="/app/factories/firebaseFactory.js"></script>
 
 
 
