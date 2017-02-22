@@ -1,18 +1,8 @@
 app.config(($routeProvider, $locationProvider) => {
 
-	// Initialize Firebase
-  $locationProvider.hashPrefix('');
-    firebase.initializeApp({
-    apiKey: "AIzaSyDtdHAH3kQCS2jdHV96Gl7-Gsbz5FaXwu8",
-    authDomain: "capstonecharliesconcertcrock.firebaseapp.com",
-    databaseURL: "https://capstonecharliesconcertcrock.firebaseio.com",
-    storageBucket: "capstonecharliesconcertcrock.appspot.com",
-    messagingSenderId: "325860455476"
-});
-
-// $locationProvider.hashPrefix("")
+locationProvider.hashPrefix('')
   $routeProvider
-    .when('/main', {
+    .when('/', {
       controller: 'homeCtrl',
       templateUrl: '/app/partials/homePage.html',
       resolve: {
@@ -21,7 +11,7 @@ app.config(($routeProvider, $locationProvider) => {
           },
           user (authFactory, $location) {
             return authFactory.getUser().catch(() => {
-                var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
+                // var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
                 // Materialize.toast($toastContent, 500);
                 // $('#loginModal').modal('open');
               $location.url('/login')})
