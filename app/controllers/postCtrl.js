@@ -3,9 +3,9 @@ app.controller('postCtrl', function($scope, $location, authFactory, concertFacto
   $scope.newPost = () => {
     // get user
     // new post
-    concertFactory.newPost($scope.Link, $scope.Title, $scope.Date, $scope.Venue)
+    concertFactory.newPost($scope.Link, $scope.Title)
       .then((user) => {
-        let userId = user.data.name
+        let userId = users.data.email
         let toPost = {"uid": userId, "first": $scope.firstName, "last": $scope.lastName}
         console.log('toPost', toPost);
         concertFactory.handleFiles(userId);

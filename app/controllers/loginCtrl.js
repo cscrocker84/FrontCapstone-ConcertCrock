@@ -5,7 +5,7 @@ app.controller('loginCtrl', function($scope, $location, authFactory) {
       .then(() => {
         Materialize.toast("logged in", 1000)
         console.log("woohoo")
-        $location.url('/main')
+        $location.url('/')
       });
   };
 
