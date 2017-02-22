@@ -11,9 +11,9 @@ locationProvider.hashPrefix('')
           },
           user (authFactory, $location) {
             return authFactory.getUser().catch(() => {
-                // var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
-                // Materialize.toast($toastContent, 500);
-                // $('#loginModal').modal('open');
+                var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
+                Materialize.toast($toastContent, 500);
+                $('#loginModal').modal('open');
               $location.url('/login')})
           },
       }
