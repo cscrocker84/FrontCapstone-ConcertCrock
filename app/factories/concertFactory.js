@@ -1,12 +1,12 @@
 app.factory('concertFactory', ($q, authFactory, $http) => {
 
   return {
-    newPost(link, title, date) {
+    newPost(link, title) {
       console.log('NEW POST')
       return authFactory.getUser()
         .then((user) => {
           return $http.post(`https://capstonecharliesconcertcrock.firebaseio.com/posts.json`, {
-            uid: user.uid,
+            uid: users.uid,
             title: title,
             url: link,
           })
