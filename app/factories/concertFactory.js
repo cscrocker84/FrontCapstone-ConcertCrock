@@ -6,7 +6,7 @@ app.factory('concertFactory', ($q, authFactory, $http) => {
       return authFactory.getUser()
         .then((user) => {
           return $http.post(`https://capstonecharliesconcertcrock.firebaseio.com/posts.json`, {
-            uid: users.uid,
+            uid: user.uid,
             title: title,
             url: link,
           })
@@ -15,8 +15,6 @@ app.factory('concertFactory', ($q, authFactory, $http) => {
     handleFiles(userId) {
       let storageRef = firebase.storage().ref();
       let File = $('#fileUpload').prop('files')[0]
-        // console.log("id?", userId)
-        // console.log('file',File)
       storageRef.child(File.name + userId).put(File)
         .then(function(snapshot) {
           $http.patch(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${userId}.json`, {

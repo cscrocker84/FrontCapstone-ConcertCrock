@@ -1,8 +1,14 @@
 app.config(($routeProvider, $locationProvider) => {
-
-locationProvider.hashPrefix('')
+      firebase.initializeApp({
+    apiKey: "AIzaSyDtdHAH3kQCS2jdHV96Gl7-Gsbz5FaXwu8",
+    authDomain: "capstonecharliesconcertcrock.firebaseapp.com",
+    databaseURL: "https://capstonecharliesconcertcrock.firebaseio.com",
+    storageBucket: "capstonecharliesconcertcrock.appspot.com",
+    messagingSenderId: "325860455476"
+});
+$locationProvider.hashPrefix("")
   $routeProvider
-    .when('/', {
+    .when('/main', {
       controller: 'homeCtrl',
       templateUrl: '/app/partials/homePage.html',
       resolve: {
@@ -12,8 +18,8 @@ locationProvider.hashPrefix('')
           user (authFactory, $location) {
             return authFactory.getUser().catch(() => {
                 var $toastContent = $('<span>Please Register or Login to contribute to content </span>');
-                Materialize.toast($toastContent, 500);
-                $('#loginModal').modal('open');
+                // Materialize.toast($toastContent, 500);
+                // $('#loginModal').modal('open');
               $location.url('/login')})
           },
       }
@@ -34,14 +40,14 @@ locationProvider.hashPrefix('')
       controller: 'searchCtrl',
       templateUrl: '/app/partials/searchPage.html',
     })
-      .when('/results', {
-      controller: 'searchCtrl',
-      templateUrl: '/app/partials/results.html',
+      // .when('/results', {
+      // controller: 'searchCtrl',
+      // templateUrl: '/app/partials/results.html',
     //   // resolve: {
     //   //     results (searchFactory, $route) {
     //   //       return weatherFactory.getWeather($route.current.params.zipcode)
       //     },
-    })
+    // })
       .when('/profile', {
       controller: 'profileCtrl',
       templateUrl: '/app/partials/profile.html',
@@ -52,5 +58,5 @@ locationProvider.hashPrefix('')
     })
     .otherwise({
       redirectTo: '/main'
-    });
-});
+    })
+})

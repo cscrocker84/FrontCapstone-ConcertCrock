@@ -1,1 +1,12 @@
-<h1>Personal Page</h1>
+<!-- Login Modal  -->
+
+<div class="showContainer">
+    <span class="row">
+        <div ng-repeat="(key, val) in media" class="showCard">
+            <div ng-model="val.id" class="col sm12 m4 l3">
+                <div class="showTitle">{{val.title}}</div>
+            <!--     <img class="modalPoster" ng-src="{{val.poster_240x342}}"> -->
+            </div>
+        </div>
+    </span>
+</div>

@@ -1,30 +1,25 @@
-.controller('MyMediaCtrl',function($scope, firebaseFactory, concertFactory){
+app.controller('profileCtrl',function($scope, firebaseFactory, searchFactory){
     //materialize modal
-    $('#modal1').modal('');
+    // $('#modal1').modal('');
 
-    $scope.uid = firebase.auth().currentUser.uid;
+    $scope.userId = firebase.auth().currentUser.uid;
     load()
 
     function load(){
-         firebaseFactory.loadinMyMedia(firebase.auth().currentUser.uid)
-        .then((res)=>{
-            console.log("res", res);
-            $scope.media = res.data
+         firebaseFactory.loadinMyShows(firebase.auth().currentUser.uid)
+        .then((response)=>{
+            console.log("response", response);
+            $scope.media = response.data
         })
     }
-    $scope.userId = firebase.auth().currentUser.uid;
+    // $scope.userId = firebase.auth().currentUser.uid;
 
-    $scope.movieId = (id, key)=>{
+    $scope.showId = (id, key)=>{
         console.log("id", key);
-        guideboxMovieFactory.findMovieByID(id)
-        .then((res)=>{
-            //$scope.key = key;
-            $scope.title = res.title;
-            $scope.img = res.poster_240x342;
-            $scope.frees = res.free_web_sources;
-            $scope.subs = res.subscription_web_sources;
-            $scope.purchases = res.purchase_web_sources;
-            $('#modal1').modal('open')
+        searchFactory.getShows($scope.zipCode)
+        .then((response)=>{
+            $scope.key = key;
+            $scope.title = response.title;
         })
     }
 
@@ -37,3 +32,8 @@
         })
     }
 })
+
+ //materialize Modals below
+  $('#personalButton').click(() => {
+    $('#personalModal').modal('open')
+  })

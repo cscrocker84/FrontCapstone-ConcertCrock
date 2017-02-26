@@ -14,13 +14,13 @@
       <p class="upvoteRating">{{value.score}}</p>
       <i ng-click="downVote(key)" class="material-icons downvote">thumb_down</i>
     </div>
-    <div class="col s3">
+    <div class="col s2">
       <img class="postImage" ng-src="{{value.image}}">
     </div>
     <div class="col s9">
       <a href="{{value.url}}"><h4>{{value.title}}</h4></a>
-      <p class="light">{{value.venue}}, {{value.date}}</p><br>
-      <p class="light">{{value.firstName}} {{value.lastName}}</p>
+    <!--   <p class="light">{{value.venue}}, {{value.date}}</p> -->
+      <p class="light">Posted By: {{value.firstName}} {{value.lastName}}</p>
     </div>
   </div>
 
@@ -59,10 +59,9 @@
       <h4>New Post</h4>
       <form ng-submit="newPost()">
         <input type="text" ng-model="Link" placeholder="Setlist from the Web">
-        <input type="text" ng-model="Title" placeholder="Artist">
-        <!-- <input type="text" ng-model="Venue" placeholder="Venue, City, State">
+        <input type="text" ng-model="Title" placeholder="Artist - Venue - City - Date">
+<!--         <input type="text" ng-model="Venue" placeholder="Venue, City, State">
         <input type="text" ng-model="Date" placeholder="Date"> -->
-
         <input type="file" id="fileUpload">
         <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Post">
       </form>

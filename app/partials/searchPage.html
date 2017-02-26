@@ -7,9 +7,10 @@
 </form>
 <div id="results" class="resultContainer all">
     <div class="row">
-            <ul ng-repeat="each in eventsArray">
+            <ul ng-repeat="each in eventsArray" class="showCard">
             	<li>Artist: {{each.Artists[0].Name}}</li>
                 <li>Date: {{each.Date}}</li>
+                <a href="{{each.TicketUrl}}"><li>Tickets: {{each.TicketUrl}}</a></li>
                 <li>Venue: {{each.Venue.Name}}</li>
                 <li>City: {{each.Venue.City}}</li>
 

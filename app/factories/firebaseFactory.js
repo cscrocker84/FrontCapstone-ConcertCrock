@@ -3,7 +3,7 @@ app.factory('firebaseFactory', function($http){
         saveToMyProfile : (user, content)=>{
             //
             return $http
-            .post(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${users}.json`, content)
+            .post(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${user}.json`, content)
             .then((response)=>{
                 console.log("firebaseFactory response", res);
                 return res;
@@ -23,7 +23,7 @@ app.factory('firebaseFactory', function($http){
         //loads all users media they saved
         loadinMyShows : (user)=>{
             return $http
-            .get(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${users}.json`)
+            .get(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${user}.json`)
             .then((res)=>{
                 console.log("firebaseFactory res", res);
                 return res;
