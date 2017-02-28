@@ -8,8 +8,7 @@ app.controller('searchCtrl', function ($scope, $location, searchFactory, authFac
 
         })
 })
-
-// artist: response.Events.Artists.Name,
-//               date: response.Events.Date,
-//               venue: response.Events.Venue.Name,
-//               city: response.Events.Venue.City,
+//materialize Modals below
+  $('#saveButton').click(() => {
+    $('#saveModal').modal('open')
+  })

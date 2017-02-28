@@ -1,12 +1,20 @@
 <!-- Login Modal  -->
 
-<div class="showContainer">
+<div class="row" ng-repeat="(key, value) in all |toArray : false">
     <span class="row">
-        <div ng-repeat="(key, val) in media" class="showCard">
-            <div ng-model="val.id" class="col sm12 m4 l3">
-                <div class="showTitle">{{val.title}}</div>
-            <!--     <img class="modalPoster" ng-src="{{val.poster_240x342}}"> -->
+        <div class="col s9">
+      	<a href="{{data.title}}"><h4>{{data.title}}</h4></a>
+      	<p class="light">{{data.date}}</p>
             </div>
         </div>
     </span>
 </div>
+<h1>Upcoming Shows of Interest</h1>
+<h4>Norah Jones</h4>
+<h5>March 1, 2017 - Ryman</h5>
+<h4>AJR</h4>
+<h5>February 27, 2017 - High Watt</h5>
+<h4>Gary Nicholson</h4>
+<h5>March 4, 2017 - 3rd and Lindsley</h5>
+<h4>AJR</h4>
+<h5>March 4, 2017 - Exit/In</h5>

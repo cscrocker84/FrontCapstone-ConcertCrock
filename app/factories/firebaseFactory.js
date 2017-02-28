@@ -3,33 +3,24 @@ app.factory('firebaseFactory', function($http){
         saveToMyProfile : (user, content)=>{
             //
             return $http
-            .post(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${user}.json`, content)
-            .then((response)=>{
-                console.log("firebaseFactory response", res);
-                return res;
+            .post(`https://capstonecharliesconcertcrock.firebaseio.com/userPosts.json`, content)
+            .then((data)=>{
+                console.log("firebaseFactory data", res);
+                return data;
             })
-            .catch((res)=>{
-                console.error(res);
-            })
-        },
-        deleteMyShows : (user, content)=>{
-            //
-            return $http
-            .delete(`https://capstonecharliesconcertcrock.firebaseio.com/${user}/${content}.json`)
-            .catch((res)=>{
-                console.error(res);
+            .catch(()=>{
+                console.error(data);
             })
         },
-        //loads all users media they saved
         loadinMyShows : (user)=>{
             return $http
-            .get(`https://capstonecharliesconcertcrock.firebaseio.com/posts/${user}.json`)
-            .then((res)=>{
-                console.log("firebaseFactory res", res);
-                return res;
+            .get(`https://capstonecharliesconcertcrock.firebaseio.com/{user}.json`)
+            .then((data)=>{
+                console.log("firebaseFactory data", data);
+                return data;
             })
-            .catch((res)=>{
-                console.error(res);
+            .catch((data)=>{
+                console.error(data);
             })
         }
     }
