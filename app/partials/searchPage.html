@@ -1,0 +1,29 @@
+<h1>Search for Upcoming Concerts by Zip Code</h1>
+<form ng-submit="getShows()">
+  <input ng-model="zipCode" type="text" placeholder="Zip Code">
+  <input class="btn btn-primary" type="submit" value="Get Shows">
+</form>
+<button id="saveButton" class="waves-effect grey btn-large" data-target="saveModal">Save Future Shows</button>
+  <div id="saveModal" ng-controller="saveCtrl" class="modal">
+    <div class="modal-content">
+      <h4>Save Future Shows</h4>
+      <form ng-submit="savePost()">
+        <input type="text" ng-model="Title" placeholder="Artist">
+        <input type="text" ng-model="Date" placeholder="Date - Venue">
+        <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Save">
+      </form>
+    </div>
+  </div>
+<div id="results" class="resultContainer all">
+    <div class="row">
+            <ul ng-repeat="each in eventsArray" class="showCard">
+            	<li>Artist: {{each.Artists[0].Name}}</li>
+                <li>Date: {{each.Date}}</li>
+                <a href="{{each.TicketUrl}}"><li>Tickets: {{each.TicketUrl}}</a></li>
+                <li>Venue: {{each.Venue.Name}}</li>
+                <li>City: {{each.Venue.City}}</li>
+
+                </ul>
+        </div>
+    </div>
+</div>

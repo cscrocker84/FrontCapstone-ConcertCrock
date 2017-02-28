@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Charlie's Concert Crock</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/lib/materialize/dist/css/materialize.css">
+ 	<link rel="stylesheet" href="app/main.css">
+</head>
+<body ng-app="concertApp">
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Charlie's Concert Crock</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/#/main">Favorite Concert Board</a></li>
+      <li><a href="/#/search">Search Page</a></li>
+      <li><a href="/#/profile">Personal Profile</a></li>
+
+  </div>
+</nav>
+
+	<div ng-view></div>
+	<script src="/lib/jquery/dist/jquery.min.js"></script>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/angular-route/angular-route.min.js"></script>
+	<script src="/lib/angular-toArrayFilter/toArrayFilter.js"></script>
+	<script src="/lib/firebase/firebase.js"></script>
+	<script src="/lib/materialize/dist/js/materialize.js"></script>
+	<script src="/lib/lodash/lodash.js"></script>
+	<script src="/app/app.js"></script>
+	<script src="/app/config/config.js"></script>
+	<script src="/app/controllers/homeCtrl.js"></script>
+	<script src="/app/controllers/loginCtrl.js"></script>
+	<script src="/app/controllers/logoutCtrl.js"></script>
+	<script src="/app/controllers/postCtrl.js"></script>
+	<script src="/app/controllers/registerCtrl.js"></script>
+	<script src="/app/controllers/searchCtrl.js"></script>
+	<script src="/app/controllers/profileCtrl.js"></script>
+	<script src="/app/controllers/saveCtrl.js"></script>
+	<script src="/app/factories/authFactory.js"></script>
+	<script src="/app/factories/concertFactory.js"></script>
+	<script src="/app/factories/searchFactory.js"></script>
+	<script src="/app/factories/saveFactory.js"></script>
+
+
+
+</body>
+</html>

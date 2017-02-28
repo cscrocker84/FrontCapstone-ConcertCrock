@@ -1,0 +1,29 @@
+.postImage {
+  max-height: 130px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.upvote:hover {
+  color: #2DDA0F;
+}
+
+.downvote:hover {
+  color: #F60009;
+}
+
+.row {
+  margin: 0 0 1.5em 0;
+}
+
+.upvoteRating {
+  margin: -0.5em 0 0 0;
+}
+
+a:hover {
+  cursor:pointer;
+}
+
+body {
+	background-color: #c2c2d6;
+}
